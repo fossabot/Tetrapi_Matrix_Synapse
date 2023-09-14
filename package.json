@@ -1,12 +1,19 @@
 {
   "name": "matrix-synapse",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "tauri": "node_modules/.bin/tauri"
+    "nvmrc": "node -v > .nvmrc",
+    "postinstall": "yarn nvmrc",
+    "predev": "yarn nvmrc",
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "rls": "dotenv-load tauri build"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.4.0"
+    "@tauri-apps/cli": "^1.4.0",
+    "dotenv-load": "^3.0.0"
   }
 }
